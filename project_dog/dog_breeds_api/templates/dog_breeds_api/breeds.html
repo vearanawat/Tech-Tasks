@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog Breeds</title>
+</head>
+<body>
+    <h1 align="center">Dog Breeds</h1>
+    <ul>
+        {% for breed, sub_breeds in breed_data.items %} 
+        <!-- .items returns the list with all dictionary keys with values -->
+            <li>
+                <a href="{% url 'random' breed %}">{{ breed }}</a>
+                {% if sub_breeds %}
+                    <ul>
+                        {% for sub_breed in sub_breeds %}
+                            <li><a href="{% url 'random' sub_breed %}">{{ sub_breed }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

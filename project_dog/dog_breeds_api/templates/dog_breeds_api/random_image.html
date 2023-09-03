@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Dog Image</title>
+</head>
+<body>
+    <h1>Dog Image</h1>
+    {% if image_url %}
+        <img src="{{ image_url }}" alt="{{ breed_name }}">
+    {% else %}
+        <p>No image available for {{ breed_name }}</p>
+    {% endif %}
+</body>
+</html>
